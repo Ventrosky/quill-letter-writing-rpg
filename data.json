@@ -1,0 +1,179 @@
+{    
+    "writeGood": {
+        "passive": false
+    },
+    "attribute":{
+        "Poor": 1,
+        "Average": 2,
+        "Good": 3
+    },
+    "scene" : [
+        "Continue" ,
+        "Suggestions",
+        "Cancel"
+    ],
+    "characters" : [
+        "The Monk" ,
+        "The Knight",
+        "The Poet",
+        "The Aristocrat",
+        "The Scholar",
+        "The Courtier"
+    ],
+    "skills" : [
+        "Inspiration" ,
+        "Illumination" ,
+        "Augmentation"
+    ],
+
+    "description" : {
+        "Inspiration" : {
+            "desc" : "You are a born leader, with the ability to use powerful language to inspire others in your letters.",
+            "detail": "Gain +1 dice to a Language Test."
+        },
+        "Illumination" : {
+            "desc" : "You have studied the art of calligraphy and manuscript illumination, able to conjure incredible works for art from the tip of your pen.",
+            "detail": "Gain +1 dice to a Penmanship Test."
+        },
+        "Augmentation" : {
+            "desc" : "You are an emotive writer with the ability to describe a scene in such a way to transport the reader with your language.",
+            "detail": "Gain +1 dice to a Heart Test."
+        },
+        "The Monk" : {
+            "desc" : "The holiest of people, monks come from all walks of life, whether they are rich or poor. Monks devote their life to the teachings of their deity, living a secluded, quiet life in the monastery. Monks must take three vows that they keep sacred - the Vow of Poverty, the Vow of Chastity and the Vow of Obedience. \nMonks are very well respected in society. Monks have excellent penmanship, having been taught the art of calligraphy in the monastery. However, they tend to write matter-of-factly. \nThe female version of the monk is the nun.",
+            "detail": "Penmanship: Good\nLanguage: Average\nHeart: Poor"
+        },
+	    "The Knight" : {
+            "desc" : "The knight is the bastion of chivalry and romance. Tales are told of great knights and their bravery in the battlefield.\nKnights embark upon grand quests, often given by the King or Queen – whether it is to save a village from marauders or to rid a forest of boggarts.\nIt is worth noting that knights can be either men or women.\nWhile knights write with all their heart, they do not have the best grasp of language.",
+            "detail": "Penmanship: Average\nLanguage: Poor\nHeart: Good"
+        },
+	    "The Poet": {
+            "desc" : "The poet is a master of language – able to create beauty with just a quill and parchment.\nMany poets form literary groups, or Poet Corners, where they meet and discuss their works. Some will even read out loud their epic works in front of an audience for payment.\nBecause the poet is more concerned with the words on the page rather than how they are presented, their penmanship isn't the best.",
+            "detail": "Penmanship: Poor\nLanguage: Good\nHeart: Average"
+        },
+	    "The Aristocrat": {
+            "desc" : "The aristocracy represents the most wealthy and privileged people in society. They have everything they could ever need – stately homes, valuable trinkets and servants at their disposal.\nNaturally aristocrats have a high standing in society, although not all are respected as many are seen as pompous and arrogant, throwing their money away on frivolous things rather than aiding those less fortunate.",
+            "detail": "Penmanship: Good\nLanguage: Poor\nHeart: Average"
+        },
+	    "The Scholar": {
+            "desc" : "Scholars are the great minds of the world – studying subjects like mathematics, literature, botany and geography.\nThe halls of universities are packed with scholar, some of which teach while others study their discipline in the library.\nScholars are well-educated, so their grasp of language is second-to-none.",
+            "detail": "Penmanship: Average\nLanguage: Good\nHeart: Poor"
+        },
+	    "The Courtier": {
+            "desc" : "Walking the halls of power, the courtier is a social butterfly who aims to climb the ranks through flattery and intrigue. They live within the walls of palaces and castles, aiding the monarchy with their duties.\nCourtiers are experts at winning people over and gaining their trust, although they are known to play people off against each other through deception in order to get ahead.",
+            "detail": "Penmanship: Poor\nLanguage: Average\nHeart: Good"
+        }
+    },
+    "scenarios":{
+        "The Archduke":{
+            "Profile": [
+                "❖ You are corresponding with the Archduke Godfrey, a powerful member of the royal family who is known for his serious demeanour.",
+                "❖ You are writing to give your condolences for the passing of his sister, Mary of Linchester. She came down with the consumption and passed a week ago. You were acquainted with her, having been in the same school when you were young. You will bring up your past and what you both did when you were children."
+            ],
+            "Rules": [
+                "❖ Courtiers and Aristocrats gain an extra Heart die in this scenario",
+                "❖ You are using a superior parchment in this missive. Gain an extra Penmanship die."
+            ],
+            "InkPot":[
+                {
+                    "Inferior": "Climbing Trees", 
+                    "Superior": "Scaling Oaks"
+                },
+                {
+                    "Inferior": "Death", 
+                    "Superior": "Passing"
+                },
+                {
+                    "Inferior": "Teachers", 
+                    "Superior": "Scholars"
+                },
+                {
+                    "Inferior": "Rode Horses", 
+                    "Superior": "Rode Stallions"
+                },
+                {
+                    "Inferior": "Town", 
+                    "Superior": "Riverton"
+                },
+                {
+                    "Inferior": "Ducks", 
+                    "Superior": "Mallards"
+                },
+                {
+                    "Inferior": "Angels", 
+                    "Superior": "Seraphim"
+                },
+                {
+                    "Inferior": "Fields", 
+                    "Superior": "Heather Fields"
+                },
+                {
+                    "Inferior": "Church", 
+                    "Superior": "Cathedral of Light"
+                },
+                {
+                    "Inferior": "Young Boy", 
+                    "Superior": "Young Harold of Whent"
+                }
+            ],
+            "Consequences":{
+                "Less than 5 points": "The Archduke is disgusted by your letter. You have lost his respect and will no longer be in contact with you.",
+                "5 to 7 points": " The Archduke responds kindly, but is quick to criticise your letter. You will unlikely hear from him for some months.",
+                "8 to 10 points": "The Archduke thanks you for your kind letter. He invites you over next week to stay on his estate.",
+                "11+ points": "The Archduke thanks you profusely for your excellent letter and promises that you will be repaid for your kindness with a gift of great worth."
+            },
+            "bonus": {
+                "All":"penmanship",
+                "The Courtier":"heart",
+                "The Aristocrat":"heart"
+            },
+            "reroll":[]
+        }
+    },
+    "dice":[
+        [
+            "","","","",""
+        ],
+        [
+            ".-------.",
+            "|       |",
+            "|   o   |",
+            "|       |",
+            "'-------'"
+        ],
+        [
+            ".-------.",
+            "| o     |",
+            "|       |",
+            "|     o |",
+            "'-------'"
+        ],
+        [
+            ".-------.",
+            "| o     |",
+            "|   o   |",
+            "|     o |",
+            "'-------'"
+        ],
+        [
+            ".-------.",
+            "| o   o |",
+            "|       |",
+            "| o   o |",
+            "'-------'"
+        ],
+        [
+            ".-------.",
+            "| o   o |",
+            "|   o   |",
+            "| o   o |",
+            "'-------'"
+        ],
+        [
+            ".-------.",
+            "| o   o |",
+            "| o   o |",
+            "| o   o |",
+            "'-------'"
+        ]]
+}

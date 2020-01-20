@@ -1,0 +1,17 @@
+{
+  "name": "quill-terminal-rpg",
+  "version": "1.0.0",
+  "description": "Quill - Letter-Writing Roleplaying Game",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodehun": "^3.0.1",
+    "terminal-kit": "^1.32.3",
+    "write-good": "^1.0.2"
+  }
+}
