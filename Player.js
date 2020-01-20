@@ -17,7 +17,9 @@ class Player {
         this.total = 0;
         console.log(scene)
         let bonus = data.scenarios[scene].bonus;
-        this[bonus.All] += 1;
+        if(bonus.hasOwnProperty('All')){
+            this[bonus.All] += 1;
+        }
         if (Object.keys(bonus).includes(character)){
             this[bonus[character]]+=1;
         }

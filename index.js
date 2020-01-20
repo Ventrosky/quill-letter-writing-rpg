@@ -106,7 +106,7 @@ function testReroll(scene,test){
 
 async function paragraph(n, scene, selected){
     term.clear();
-    term( '\n\n** Starting New Paragraph ** \n') ;
+    term.red( '\n\n** Starting New Paragraph ** \n') ;
     let flourish = await confirm('whish to Use Flourishes');
     let heart = false;
     if (flourish){
@@ -137,7 +137,7 @@ async function paragraph(n, scene, selected){
                 break;
             default:
                 term.blue('\n\nInk Pot word: "%s" (%s%s)', word.selectedText, type, augment );
-                term( '\nParagraph %s: \n',n ) ;
+                term.red( '\nParagraph %s: \n',n ) ;
                 input = await term.inputField(
                     { history: history , autoComplete: autoComplete , autoCompleteMenu: true }
                 ).promise ;
@@ -192,8 +192,17 @@ function finalLetter(letter, scene){
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir);
     }
-    let filename =  `${dir}/${scene}_${player.character}_${ts}.txt`
-    fs.writeFile(filename.replace(/\s/g,''), [ scene, ...letter].join('\n\n'), function (err) {
+
+    let filename =  `${dir}/${scene}_${player.character}_${ts}.md`
+    fs.writeFile(filename.replace(/\s/g,''), [ 
+        `# ${scene} - ${player.character}`, 
+        '\n## Profile\n', 
+        ...data.scenarios[scene].Profile.map(e => `* ${e.substring(2)}`),
+        '\n## Correspondence\n', 
+        ...letter,
+        '\n## Consequences\n', 
+        data.scenarios[scene].Consequences[key]
+    ].join('\n'), function (err) {
         if (err) throw err;
     });
 }
@@ -205,10 +214,9 @@ async function scenario(){
         term( '\nSelect the Scenario: ');
         answer = await term.singleColumnMenu( Object.keys(data.scenarios) ).promise;
         term.blue( "\nSelected '%s'\n" , answer.selectedText ) ;
-        term.cyan('\nProfile\n');
+        term.cyan('\nProfile\n\n');
         data.scenarios[answer.selectedText].Profile.forEach(p => term.green('%s\n',p));
-        term.cyan('\n\nRules of Correspondence\n');
-        term.cyan('\n');
+        term.cyan('\n\nRules of Correspondence\n\n');
         data.scenarios[answer.selectedText].Rules.forEach(p => term.green('%s\n',p));
         term.cyan('\n');
     } while (!await confirm());

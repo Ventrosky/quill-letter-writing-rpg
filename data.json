@@ -118,7 +118,7 @@
             ],
             "Consequences":{
                 "Less than 5 points": "The Archduke is disgusted by your letter. You have lost his respect and will no longer be in contact with you.",
-                "5 to 7 points": " The Archduke responds kindly, but is quick to criticise your letter. You will unlikely hear from him for some months.",
+                "5 to 7 points": "The Archduke responds kindly, but is quick to criticise your letter. You will unlikely hear from him for some months.",
                 "8 to 10 points": "The Archduke thanks you for your kind letter. He invites you over next week to stay on his estate.",
                 "11+ points": "The Archduke thanks you profusely for your excellent letter and promises that you will be repaid for your kindness with a gift of great worth."
             },
@@ -126,6 +126,194 @@
                 "All":"penmanship",
                 "The Courtier":"heart",
                 "The Aristocrat":"heart"
+            },
+            "reroll":[]
+        },        
+        "The Art Dealer":{
+            "Profile": [
+                "❖ You are corresponding with Christina Bowbridge, renowned art dealer who is known for her enthusiastic personality and adoration of the monarchy.",
+                "❖ You are writing to inquire about buying a portrait of Prince Edward IV, however you have heard rumours that this painting could be a fake, but you must find this information from Christina without offending her."
+            ],
+            "Rules": [
+                "❖ Ms Bowbridge likes to be impressed with beautiful calligraphy so you must take care. When making a Penmanship test, re-roll the highest die and accept the final roll."
+            ],
+            "InkPot":[
+                {
+                    "Inferior": "The Prince", 
+                    "Superior": "His Royal Highness Prince"
+                },
+                {
+                    "Inferior": "Edward IV", 
+                    "Superior": "Edward IV"
+                },
+                {
+                    "Inferior": "Fake", 
+                    "Superior": "Reproduction"
+                },
+                {
+                    "Inferior": "Colours", 
+                    "Superior": "Spectrum"
+                },
+                {
+                    "Inferior": "I'm sorry", 
+                    "Superior": "I apologise profusely"
+                },
+                {
+                    "Inferior": "Fountain", 
+                    "Superior": "Great Fountain of Aleah"
+                },
+                {
+                    "Inferior": "Look at", 
+                    "Superior": "Inspect"
+                },
+                {
+                    "Inferior": "Skill", 
+                    "Superior": "Esteemed expertise"
+                },
+                {
+                    "Inferior": "My mum", 
+                    "Superior": "My dear mother"
+                },
+                {
+                    "Inferior": "Signature", 
+                    "Superior": "Inscription"
+                },
+                {
+                    "Inferior": "Tick you off", 
+                    "Superior": "Offend you"
+                }
+            ],
+            "Consequences":{
+                "Less than 5 points": "Christina takes great offence to your letter and responds with a scathing letter about your character. She will not sell you the painting...ever.",
+                "5 to 7 points": "Christina's response is mild, but she has obviously taken some offence. She will sell the painting but for double the price.",
+                "8 to 10 points": "Christina is pleased with your letter and responds enthusiastically. She clearly has taken little offence and will sell you the painting.",
+                "11+ points": "Christina is overwhelmed by your letter and wishes to give you the painting as a gift."
+            },
+            "bonus": {
+            },
+            "reroll":["penmanship"]
+        },        
+        "The Father":{
+            "Profile": [
+                "❖ You are corresponding with Mr Anthony Winsborough, an old friend of yours, whose son, Rupert, was found dead near your residences.",
+                "❖ You are writing to inform Anthony of his son's death. You must be sensitive and explain what happened and how you found Rupert."
+            ],
+            "Rules": [
+                "❖ Anthony would prefer to hear this news from a person of the cloth. Monks and nuns gain an extra die when rolling Language tests for this scenario."
+            ],
+            "InkPot":[
+                {
+                    "Inferior": "Your boy", 
+                    "Superior": "Your dear son"
+                },
+                {
+                    "Inferior": "Corpse", 
+                    "Superior": "Body"
+                },
+                {
+                    "Inferior": "Bawdy house", 
+                    "Superior": "Drinking establishment"
+                },
+                {
+                    "Inferior": "Brutal", 
+                    "Superior": "Harrowing"
+                },
+                {
+                    "Inferior": "I'm sorry", 
+                    "Superior": "My infinite condolences"
+                },
+                {
+                    "Inferior": "At peace", 
+                    "Superior": "In heaven"
+                },
+                {
+                    "Inferior": "A guard", 
+                    "Superior": "The police"
+                },
+                {
+                    "Inferior": "Sadness", 
+                    "Superior": "Sorrow"
+                },
+                {
+                    "Inferior": "Rain", 
+                    "Superior": "Downpour"
+                },
+                {
+                    "Inferior": "Box", 
+                    "Superior": "Coffin"
+                }
+            ],
+            "Consequences":{
+                "Less than 5 points": "Anthony responds aggressively, blaming you for not being there for him and for not caring. You no longer hear from Anthony.",
+                "5 to 7 points": "Anthony's is clearly disappointed in how you have relayed the information to him, but he does not blame you.",
+                "8 to 10 points": "Anthony thanks you for telling him about his son and invites you to his funeral.",
+                "11+ points": "Anthony commends you for your letter and wishes you to speak at his son's funeral."
+            },
+            "bonus": {
+                "The Monk" : "language"
+            },
+            "reroll":[]
+        },        
+        "The King":{
+            "Profile": [
+                "❖ You are corresponding with King Gerald V, who you have only met on one occasion. He is a tyrant and unloved by the populace.",
+                "❖ You are writing to inform the King of a suspicious fellow you have seen about town who you believe to be a spy. You must convince him that you are not a raving lunatic and to take your concerns seriously, while being cordial."
+            ],
+            "Rules": [
+                "❖ You are using a high quality parchment and seal. Gain an extra Penmanship die.",
+                "❖ Courtiers gain an extra Heart die this scenario."
+            ],
+            "InkPot":[
+                {
+                    "Inferior": "Gerald", 
+                    "Superior": "Your Majesty"
+                },
+                {
+                    "Inferior": "Smithy", 
+                    "Superior": "Blacksmith"
+                },
+                {
+                    "Inferior": "Funny man", 
+                    "Superior": "Curious individual"
+                },
+                {
+                    "Inferior": "Hidden", 
+                    "Superior": "Concealed"
+                },
+                {
+                    "Inferior": "Poison", 
+                    "Superior": "Deadly Nightshade"
+                },
+                {
+                    "Inferior": "Big bloke", 
+                    "Superior": "Imposing man"
+                },
+                {
+                    "Inferior": "Cow house", 
+                    "Superior": "Barn"
+                },
+                {
+                    "Inferior": "Furry lip", 
+                    "Superior": "Moustache"
+                },
+                {
+                    "Inferior": "Buggered face", 
+                    "Superior": "Scarred visage"
+                },
+                {
+                    "Inferior": "Worrying", 
+                    "Superior": "Alarming"
+                }
+            ],
+            "Consequences":{
+                "Less than 5 points": " The King does not respond. Several days after you sent your missive you are visited by the royal guard and brought to prison for your disrespectful letter.",
+                "5 to 7 points": "You receive a letter from the captain of the royal guard thanking you, but she does not believe you and does not wish you to write again.",
+                "8 to 10 points": "You receive a letter from a senior official close to the King thanking you. You also receive a monetary reward in the letter.",
+                "11+ points": "The King writes to you personally with great thanks. He has positioned his guard close by and the spy will be caught. You are invited to the King's court as a guest and hero."
+            },
+            "bonus": {
+                "All":"penmanship",
+                "The Courtier" : "heart"
             },
             "reroll":[]
         }
