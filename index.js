@@ -72,8 +72,8 @@ async function rollDice(n, ascii, name, scene){
     return esito;
 }
 
-function calculateScore(flourish, heart, language, penmanship){
-    let score = (language ? 1 : 0) + (penmanship ? 1 : 0);
+function calculateScore(flourish, heart, language, penmanship, bonus = 0){
+    let score = (language ? 1 : 0) + (penmanship ? 1 : 0) + bonus;
     if (flourish && heart){
         score += (language ? 1 : -1)
     }
@@ -105,7 +105,9 @@ function testReroll(scene,test){
 }
 
 async function paragraph(n, scene, selected){
-    term.clear();
+    if(await confirm('want to clear the screen')){
+        term.clear();
+    }
     term.red( '\n\n** Starting New Paragraph ** \n') ;
     let flourish = await confirm('whish to Use Flourishes');
     let heart = false;
@@ -117,9 +119,12 @@ async function paragraph(n, scene, selected){
     let type = language ? 'Superior' : 'Inferior';
 
     let words = data.scenarios[scene].InkPot.map(e => e[type]).filter(w => !selected.includes(w) )
-    term( '\nSelect the Word: ');
+    term( '\nSelect the Word from the Ink Pot: \n');
     let word = await term.singleColumnMenu( words ).promise;
     autoComplete.push(word.selectedText);
+    //autoComplete.push(word.selectedText.replace(/^\w/, function (chr) {
+    //    return chr.toLowerCase();
+    //}));
 
     var marked = data.scenarios[scene].InkPot.filter(obj => {
         return obj[type] === word.selectedText
@@ -132,6 +137,9 @@ async function paragraph(n, scene, selected){
     let input = "";
     do {
         switch(step.selectedText){
+            case "Profile":
+                data.scenarios[scene].Profile.forEach(e => term.green('%s\n',e))
+                break;
             case "Suggestions":
                 await checkText(input);
                 break;
@@ -150,8 +158,13 @@ async function paragraph(n, scene, selected){
 
     term( '\n');
     let penmanship = await rollDice(player.penmanship, data.dice, 'penmanship', scene)
+    let bonus = 0;
+    if(data.scenarios[scene].hasOwnProperty('code') && data.scenarios[scene].code){
+        let extraPenmanship = await rollDice(player.penmanship, data.dice, 'penmanship', scene)
+        bonus += extraPenmanship ? 2 : -2;
+    } 
 
-    let score = calculateScore(flourish, heart, language, penmanship);
+    let score = calculateScore(flourish, heart, language, penmanship, bonus);
     term.red("Score:", score)
     player.total += score;
 
@@ -195,7 +208,8 @@ function finalLetter(letter, scene){
 
     let filename =  `${dir}/${scene}_${player.character}_${ts}.md`
     fs.writeFile(filename.replace(/\s/g,''), [ 
-        `# ${scene} - ${player.character}`, 
+        `# ${scene}`, 
+        `> ${player.character}`, 
         '\n## Profile\n', 
         ...data.scenarios[scene].Profile.map(e => `* ${e.substring(2)}`),
         '\n## Correspondence\n', 

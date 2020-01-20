@@ -6,7 +6,6 @@ class Player {
         let dataSkill = data.description[skill].detail;
         
         this.target = dataSkill.match(/dice to a ([\w]+) Test/i)[1].toLowerCase();
-        this.usedSkill = false;
 
         let dataChar = data.description[character].detail;
 
@@ -22,6 +21,11 @@ class Player {
         }
         if (Object.keys(bonus).includes(character)){
             this[bonus[character]]+=1;
+        }
+        if(data.scenarios[scene].hasOwnProperty('noskills')){
+            this.usedSkill = data.scenarios[scene].noskills;
+        } else {
+            this.usedSkill = false;
         }
     }
     toString() {

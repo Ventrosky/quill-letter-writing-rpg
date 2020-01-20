@@ -10,6 +10,7 @@
     "scene" : [
         "Continue" ,
         "Suggestions",
+        "Profile",
         "Cancel"
     ],
     "characters" : [
@@ -306,7 +307,7 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": " The King does not respond. Several days after you sent your missive you are visited by the royal guard and brought to prison for your disrespectful letter.",
+                "Less than 5 points": "The King does not respond. Several days after you sent your missive you are visited by the royal guard and brought to prison for your disrespectful letter.",
                 "5 to 7 points": "You receive a letter from the captain of the royal guard thanking you, but she does not believe you and does not wish you to write again.",
                 "8 to 10 points": "You receive a letter from a senior official close to the King thanking you. You also receive a monetary reward in the letter.",
                 "11+ points": "The King writes to you personally with great thanks. He has positioned his guard close by and the spy will be caught. You are invited to the King's court as a guest and hero."
@@ -316,6 +317,311 @@
                 "The Courtier" : "heart"
             },
             "reroll":[]
+        },        
+        "A Cruel Distance":{
+            "Profile": [
+                "❖ You are corresponding with Aubrey Cornish, a bookmaker you met while abroad. After becoming instantly besotted, you had to leave after a month to return to your home country.",
+                "❖ You are writing to explain your feelings and to persuade Aubrey to come to your country to live with you."
+            ],
+            "Rules": [
+                "❖ Aubrey is a bookmaker and therefore enjoys well-crafted missives. You will be using your best ink for this letter, giving you an extra Penmanship die."
+            ],
+            "InkPot":[
+                {
+                    "Inferior": "Miss you", 
+                    "Superior": "Dying be with you"
+                },
+                {
+                    "Inferior": "Mountains", 
+                    "Superior": "Peaks of Vandrias"
+                },
+                {
+                    "Inferior": "Flowers", 
+                    "Superior": "Tulips"
+                },
+                {
+                    "Inferior": "Want", 
+                    "Superior": "Desire"
+                },
+                {
+                    "Inferior": "Cold", 
+                    "Superior": "Freezing"
+                },
+                {
+                    "Inferior": "Books", 
+                    "Superior": "Tomes"
+                },
+                {
+                    "Inferior": "Gentle", 
+                    "Superior": "Fragile"
+                },
+                {
+                    "Inferior": "Hold", 
+                    "Superior": "Embrace"
+                },
+                {
+                    "Inferior": "Marry", 
+                    "Superior": "Be wed"
+                },
+                {
+                    "Inferior": "Tick you off", 
+                    "Superior": "Offend you"
+                }
+            ],
+            "Consequences":{
+                "Less than 5 points": "You receive a response to your letter, explaining that Aubrey could never be with you. Your true love tells you to never write again.",
+                "5 to 7 points": "Aubrey is flattered, but cannot return your love. You receive no more letters.",
+                "8 to 10 points": "You receive a beautiful letter returning your feelings. Aubrey will be moving in the next month to be with you.",
+                "11+ points": "Aubrey is overjoyed with your letter and will not only move within the fortnight, but also wishes to marry you immediately."
+            },
+            "bonus": {
+                "All":"penmanship"
+            },
+            "reroll":[]
+        },        
+        "Making Amends":{
+            "Profile": [
+                "❖ You are corresponding with Emery Penderghast, an ex-lover who left you a month ago after deciding that you weren't committed to the relationship.",
+                "❖ You are writing to win back Emery and to explain that you have changed and are more committed than ever. You need to persuade Emery that you both have a future and give examples as to how your life is without your love."
+            ],
+            "Rules": [
+                "❖ Emery likes when people are straightforward with their correspondence. You are unable to use any skills in this letter."
+            ],
+            "InkPot":[
+                {
+                    "Inferior": "Face", 
+                    "Superior": "Visage"
+                },
+                {
+                    "Inferior": "Need", 
+                    "Superior": "Yearn"
+                },
+                {
+                    "Inferior": "Morning", 
+                    "Superior": "Sunrise"
+                },
+                {
+                    "Inferior": "Cried", 
+                    "Superior": "Wept"
+                },
+                {
+                    "Inferior": "Been an idiot", 
+                    "Superior": "Been a fool"
+                },
+                {
+                    "Inferior": "Cart", 
+                    "Superior": "Carriage"
+                },
+                {
+                    "Inferior": "Stars", 
+                    "Superior": "Galaxies"
+                },
+                {
+                    "Inferior": "Sad", 
+                    "Superior": "Devastated"
+                },
+                {
+                    "Inferior": "Pie-Eyed", 
+                    "Superior": "Besotted"
+                },
+                {
+                    "Inferior": "Hell", 
+                    "Superior": "Eternal Hellfire"
+                }
+            ],
+            "Consequences":{
+                "Less than 5 points": "Emery write back, believing that you are worse than ever and that there is no hint of sincerity in your writing. You receive no further correspondence.",
+                "5 to 7 points": "Emery's heart is softened by your words, but cannot be with you. Emery is happy to be friends with you.",
+                "8 to 10 points": "You receive a heartfelt letter from Emery, admitting that you have changed and that you both should meet by the fountain on Monday evening to rekindle your love.",
+                "11+ points": "You receive no correspondence. Instead, a few days after sending, you receive a knock at your door. Emery stands there and you both embrace. You marry within the month."
+            },
+            "bonus": {
+            },
+            "reroll":[],
+            "noskills": true
+        },        
+        "Winning a Heart":{
+            "Profile": [
+                "❖ You are corresponding with Francis Fletcher, an aristocrat who has the eye of many in the land. Francis is refined, intelligent and well-to-do, but does not suffer fools lightly.",
+                "❖ Despite being famously fickle, you are determined win Francis over with a perfectlypenned letter from the heart (without looking like an idiot)."
+            ],
+            "Rules": [
+                "❖ Francis respects wealth. Aristocrats gain an extra die in their Heart skill for this letter."
+            ],
+            "InkPot":[
+                {
+                    "Inferior": "Gold", 
+                    "Superior": "Glittering Diamonds"
+                },
+                {
+                    "Inferior": "Your Body", 
+                    "Superior": "Your Form"
+                },
+                {
+                    "Inferior": "Play", 
+                    "Superior": "Theatrical Performance"
+                },
+                {
+                    "Inferior": "Music", 
+                    "Superior": "Symphony"
+                },
+                {
+                    "Inferior": "Imagine", 
+                    "Superior": "Dream"
+                },
+                {
+                    "Inferior": "Wine", 
+                    "Superior": "Champaign"
+                },
+                {
+                    "Inferior": "The King", 
+                    "Superior": "His Royal Highness"
+                },
+                {
+                    "Inferior": "Wonderful", 
+                    "Superior": "Perfection"
+                },
+                {
+                    "Inferior": "Painter", 
+                    "Superior": "Artist"
+                },
+                {
+                    "Inferior": "Dinner", 
+                    "Superior": "Caviar"
+                }
+            ],
+            "Consequences":{
+                "Less than 5 points": "You are visited by Francis' personal aid who tells you to stop your harassing correspondence or there will be trouble.",
+                "5 to 7 points": "Your receive a reply, but it is not good news. Your letter was one of the best Francis has read this month, but the feelings are not reciprocated.",
+                "8 to 10 points": "Francis writes back, impressed by your letter. Very few people are able to pull off such wonderful language, and Francis wishes to meet with you this week.",
+                "11+ points": "A personal aid of Francis appears at your door. He says that Francis was overwhelmed by your letter and believe you to be soulmates."
+            },
+            "bonus": {
+                "The Aristocrat":"heart"
+            },
+            "reroll":[]
+        },        
+        "Something More":{
+            "Profile": [
+                "❖ You are corresponding with Rowan Godfrey, an old friend who you have grown more fond of recently, to the point that you wish to declare your love.",
+                "❖ The line of friend and lover can be a precarious one and you do not wish to lose Rowan as a friend."
+            ],
+            "Rules": [
+                "❖ You know Rowan very well, so gain an extra die in Language for this letter."
+            ],
+            "InkPot":[
+                {
+                    "Inferior": "Chums", 
+                    "Superior": "Friends"
+                },
+                {
+                    "Inferior": "Scare you", 
+                    "Superior": "Concern you"
+                },
+                {
+                    "Inferior": "Always", 
+                    "Superior": "Eternal"
+                },
+                {
+                    "Inferior": "Ocean", 
+                    "Superior": "Seven Seas"
+                },
+                {
+                    "Inferior": "Sadness", 
+                    "Superior": "Gloom"
+                },
+                {
+                    "Inferior": "Companions", 
+                    "Superior": "Soul Mates"
+                },
+                {
+                    "Inferior": "Song", 
+                    "Superior": "Ballad"
+                },
+                {
+                    "Inferior": "Affection", 
+                    "Superior": "Passion"
+                },
+                {
+                    "Inferior": "Doomed", 
+                    "Superior": "Ill-fated"
+                },
+                {
+                    "Inferior": "Flame", 
+                    "Superior": "Inferno"
+                }
+            ],
+            "Consequences":{
+                "Less than 5 points": "You receive a letter saying that Rowan is leaving the country, although it doesn't mention a reason. You receive no further correspondence.",
+                "5 to 7 points": "Your receive a reply, but Rowan just wants to remain friends. You soon grow apart, but see each other on occasion, although it is awkward.",
+                "8 to 10 points": "Rowan writes a relieved letter explaining that the feelings are mutual.",
+                "11+ points": "Rowan is ecstatic and immediately begins planning a wedding."
+            },
+            "bonus": {
+                "All":"language"
+            },
+            "reroll":[]
+        },        
+        "Forbidden Love":{
+            "Profile": [
+                "❖ You are corresponding with Florence Payne, whose mother is Lady Bethany Payne, an influential courtier. She is protective and does not allow anyone to see Florence in a romantic way. However, you have caught Florence's eye and have been sneaking around for the past few months.",
+                "❖ You are besotted with Florence and you wish to propose in a letter. However, you may have to contend with Lady Bethany if the letter is too obviously declaring your love for Florence. Instead, you must be clever with your language and never directly allude to a proposal, just in case Lady Bethany intercepts the letter."
+            ],
+            "Rules": [
+                "❖ You will have to write this letter in a sly code, that only Florence will understand. Roll an extra Penmanship test at the end of the letter. If this succeeds, gain an extra 2 points. If it fails, reduce your total by 2 points."
+            ],
+            "InkPot":[
+                {
+                    "Inferior": "Lawn", 
+                    "Superior": "Garden"
+                },
+                {
+                    "Inferior": "Dogs", 
+                    "Superior": "Hounds"
+                },
+                {
+                    "Inferior": "White", 
+                    "Superior": "Ivory"
+                },
+                {
+                    "Inferior": "Duck", 
+                    "Superior": "Swan"
+                },
+                {
+                    "Inferior": "Shining", 
+                    "Superior": "Glimmering"
+                },
+                {
+                    "Inferior": "Wellborn", 
+                    "Superior": "Noble"
+                },
+                {
+                    "Inferior": "Toss", 
+                    "Superior": "Throw"
+                },
+                {
+                    "Inferior": "Smell", 
+                    "Superior": "Scent"
+                },
+                {
+                    "Inferior": "Pig", 
+                    "Superior": "Sow"
+                },
+                {
+                    "Inferior": "Cherub", 
+                    "Superior": "Angel"
+                }
+            ],
+            "Consequences":{
+                "Less than 5 points": "You receive an angry letter from Lady Bethany telling you to refrain from any more correspondence. She has placed more guards outside her estate and has ordered them to shoot on site if they see you.",
+                "5 to 7 points": "Florence responds, but is confused about your letter, so does not acknowledge your proposal.",
+                "8 to 10 points": "Florence agrees to marry you and is impressed with your clever letter.",
+                "11+ points": "Florence will marry you, and after showing the exceptional way you proposed..."
+            },
+            "bonus": {
+            },
+            "reroll":[],
+            "code":true
         }
     },
     "dice":[
