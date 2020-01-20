@@ -1,5 +1,4 @@
-Quill - A letter-writing roleplaying game for terminals
-========================================================
+#Quill - A letter-writing roleplaying game for terminals
 
 >Digital adaptation of the game **Quill - A letter-writing roleplaying game for a single player**, designed by *Scott Malthouse* and published by *Trollish Delver Games*. Support the game author by purchasing the PDF rules from DriveThruRPG.com
 
