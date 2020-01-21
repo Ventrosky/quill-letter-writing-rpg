@@ -8,10 +8,10 @@
         "Good": 3
     },
     "scene" : [
-        "Continue" ,
-        "Suggestions",
+        "Cancel",
+        "Continue",
         "Profile",
-        "Cancel"
+        "Suggestions"
     ],
     "characters" : [
         "The Monk" ,
@@ -21,10 +21,26 @@
         "The Scholar",
         "The Courtier"
     ],
+    "dwarves" : [
+        "The Gardener" ,
+        "The Noble",
+        "The Keeper",
+        "The Fargoer",
+        "The Hoarder",
+        "The Setter"
+    ],
     "skills" : [
         "Inspiration" ,
         "Illumination" ,
         "Augmentation"
+    ],
+    "dwarvesskills" : [
+        "Inspiration" ,
+        "Illumination" ,
+        "Augmentation",
+        "Wordsmith" ,
+        "Craftsmanship" ,
+        "Fervency"
     ],
 
     "description" : {
@@ -39,6 +55,18 @@
         "Augmentation" : {
             "desc" : "You are an emotive writer with the ability to describe a scene in such a way to transport the reader with your language.",
             "detail": "Gain +1 dice to a Heart Test."
+        },
+        "Wordsmith" : {
+            "desc" : "When you make a Language Test and roll at least one 6, roll another die to add another word from the inkpot for +1 points on a success.",
+            "detail": "Exploding dice to a Language Test."
+        },
+        "Craftsmanship" : {
+            "desc" : "When you make a Penmanship Test and roll at least one 6, roll another die and add +1 Points on a success.",
+            "detail": "Exploding dice to a Penmanship Test."
+        },
+        "Fervency" : {
+            "desc" : "When you roll your Heart skill for a Flourish before rolling Language, and roll at least one 6, roll another die for another flourish. Add +1 Points on a success.",
+            "detail": "Exploding dice to a Heart Test."
         },
         "The Monk" : {
             "desc" : "The holiest of people, monks come from all walks of life, whether they are rich or poor. Monks devote their life to the teachings of their deity, living a secluded, quiet life in the monastery. Monks must take three vows that they keep sacred - the Vow of Poverty, the Vow of Chastity and the Vow of Obedience. \nMonks are very well respected in society. Monks have excellent penmanship, having been taught the art of calligraphy in the monastery. However, they tend to write matter-of-factly. \nThe female version of the monk is the nun.",
@@ -63,10 +91,35 @@
 	    "The Courtier": {
             "desc" : "Walking the halls of power, the courtier is a social butterfly who aims to climb the ranks through flattery and intrigue. They live within the walls of palaces and castles, aiding the monarchy with their duties.\nCourtiers are experts at winning people over and gaining their trust, although they are known to play people off against each other through deception in order to get ahead.",
             "detail": "Penmanship: Poor\nLanguage: Average\nHeart: Good"
+        },
+	    "The Gardener": {
+            "desc" : "Many dwarves belong to Cogs, guild-like organizations serving to benefit various artisans and laborers. But most dwarves are their own masters, handling their own affairs, and that includes food. The Gardener is a common dwarf, content to till little mushroom fields and grow nettles and keep house and mind their own.\nTheir letters are for each other, or for their homegrown businesses. They prefer plain, straightfoward language but put a good amount of energy into their correspondences.",
+            "detail": "Penmanship: Average\nLanguage: Poor\nHeart: Good"
+        },
+	    "The Noble": {
+            "desc" : "Nobility takes different forms in the Homes: from Ladies who control Houses, to Cog-bosses who manage crafting Cogs, to just plain wealthy dwarves. These are the movers and shakers of the Homes, though there isn’t all that much to move and shake. Mostly they run in their own circles and host extravagant parties.\nNobles spend their time practicing spectacular hand lettering, usually just to be showy. This effort could wear out the best of us, and the nobles are often the most prolific letter writers, so sometimes their enthusiasm for the art wanes.",
+            "detail": "Penmanship: Good\nLanguage: Average\nHeart: Poor"
+        },
+	    "The Keeper": {
+            "desc" : "The Keeper spends day in and day out studying. Their hasty scrawl leaves much to be desired, but their letters are always full of interesting facts and bizarre musings. Sometimes their erudition and haste get in the way of proper penmanship and many have claimed their letters are unreadable. To these the Keeper replies, ‘Well, read a little harder!’\nThe Keeper corresponds with all citizens of the Homes: nobility in need of advice, pub owners hoping for a new ingredient to give their brew the edge it needs. This feeling of importance can be seen in their writing.",
+            "detail": "Penmanship: Poor\nLanguage: Good\nHeart: Average"
+        },
+	    "The Fargoer": {
+            "desc" : "Dark caves and chasms need charting, and the world aboveground needs scouting. Who else could be bothered to complete such uncomfortable work but a Fargoer? These spies are the eyes and ears of the Homes. Their communications must be crisp and clear, per the expectations of their Spy-master Aevi. But the work gets tiring. Nobody really wants to write a detailed report at the end of a long day traversing the underworld, and so their hearts are not often in their letters. Though they write quite well!",
+            "detail": "Penmanship: Average\nLanguage: Poor\nHeart: Good"
+        },
+	    "The Hoarder": {
+            "desc" : "A Hoarder keeps track of all the many items that flow throughout the Homes. They have a passion for writing and record keeping, as befits their position, but their penmanship is rough. Too used to the odd stenography employed for rapid tallying, their lettering is almost as cryptic. But the care they put into their letters is enjoyed by all their recipients. Even a dwarf receiving a letter of repossession has been known to smile kindly at the detail and care flowing from the missive...until she realizes she’s losing her still.",
+            "detail": "Penmanship: Poor\nLanguage: Average\nHeart: Good"
+        },
+	    "The Setter": {
+            "desc" : "None take more care in their work than the Setter. These jewelers, like the pieces they forge and adorn, have wonderful, floral lettering...and not much else. Oftentimes they spend so much time on a single illustrated letter that the intent of the correspondence is lost. But there is something to be said when form supercedes content, and the Setter is the case-inpoint. Whether it is a receipt, an order for a new bangle, or a simple note to a friend, it’s going to look great.",
+            "detail": "Penmanship: Good\nLanguage: Poor\nHeart: Average"
         }
     },
     "scenarios":{
         "The Archduke":{
+            "type": "classic",
             "Profile": [
                 "❖ You are corresponding with the Archduke Godfrey, a powerful member of the royal family who is known for his serious demeanour.",
                 "❖ You are writing to give your condolences for the passing of his sister, Mary of Linchester. She came down with the consumption and passed a week ago. You were acquainted with her, having been in the same school when you were young. You will bring up your past and what you both did when you were children."
@@ -131,6 +184,7 @@
             "reroll":[]
         },        
         "The Art Dealer":{
+            "type": "classic",
             "Profile": [
                 "❖ You are corresponding with Christina Bowbridge, renowned art dealer who is known for her enthusiastic personality and adoration of the monarchy.",
                 "❖ You are writing to inquire about buying a portrait of Prince Edward IV, however you have heard rumours that this painting could be a fake, but you must find this information from Christina without offending her."
@@ -195,6 +249,7 @@
             "reroll":["penmanship"]
         },        
         "The Father":{
+            "type": "classic",
             "Profile": [
                 "❖ You are corresponding with Mr Anthony Winsborough, an old friend of yours, whose son, Rupert, was found dead near your residences.",
                 "❖ You are writing to inform Anthony of his son's death. You must be sensitive and explain what happened and how you found Rupert."
@@ -256,6 +311,7 @@
             "reroll":[]
         },        
         "The King":{
+            "type": "classic",
             "Profile": [
                 "❖ You are corresponding with King Gerald V, who you have only met on one occasion. He is a tyrant and unloved by the populace.",
                 "❖ You are writing to inform the King of a suspicious fellow you have seen about town who you believe to be a spy. You must convince him that you are not a raving lunatic and to take your concerns seriously, while being cordial."
@@ -319,6 +375,7 @@
             "reroll":[]
         },        
         "A Cruel Distance":{
+            "type": "love letters",
             "Profile": [
                 "❖ You are corresponding with Aubrey Cornish, a bookmaker you met while abroad. After becoming instantly besotted, you had to leave after a month to return to your home country.",
                 "❖ You are writing to explain your feelings and to persuade Aubrey to come to your country to live with you."
@@ -380,6 +437,7 @@
             "reroll":[]
         },        
         "Making Amends":{
+            "type": "love letters",
             "Profile": [
                 "❖ You are corresponding with Emery Penderghast, an ex-lover who left you a month ago after deciding that you weren't committed to the relationship.",
                 "❖ You are writing to win back Emery and to explain that you have changed and are more committed than ever. You need to persuade Emery that you both have a future and give examples as to how your life is without your love."
@@ -441,6 +499,7 @@
             "noskills": true
         },        
         "Winning a Heart":{
+            "type": "love letters",
             "Profile": [
                 "❖ You are corresponding with Francis Fletcher, an aristocrat who has the eye of many in the land. Francis is refined, intelligent and well-to-do, but does not suffer fools lightly.",
                 "❖ Despite being famously fickle, you are determined win Francis over with a perfectlypenned letter from the heart (without looking like an idiot)."
@@ -502,6 +561,7 @@
             "reroll":[]
         },        
         "Something More":{
+            "type": "love letters",
             "Profile": [
                 "❖ You are corresponding with Rowan Godfrey, an old friend who you have grown more fond of recently, to the point that you wish to declare your love.",
                 "❖ The line of friend and lover can be a precarious one and you do not wish to lose Rowan as a friend."
@@ -563,6 +623,7 @@
             "reroll":[]
         },        
         "Forbidden Love":{
+            "type": "love letters",
             "Profile": [
                 "❖ You are corresponding with Florence Payne, whose mother is Lady Bethany Payne, an influential courtier. She is protective and does not allow anyone to see Florence in a romantic way. However, you have caught Florence's eye and have been sneaking around for the past few months.",
                 "❖ You are besotted with Florence and you wish to propose in a letter. However, you may have to contend with Lady Bethany if the letter is too obviously declaring your love for Florence. Instead, you must be clever with your language and never directly allude to a proposal, just in case Lady Bethany intercepts the letter."

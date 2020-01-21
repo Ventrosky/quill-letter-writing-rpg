@@ -1,11 +1,10 @@
 const fs = require('fs');
 const term = require( 'terminal-kit' ).terminal;
 const writeGood = require('write-good');
-
+const yargs = require('yargs');
 const {Nodehun} = require('nodehun');
 const affbuf = fs.readFileSync('en_US.aff');
 const dictbuf = fs.readFileSync('en_US.dic');
-
 const nodehun = new Nodehun(affbuf, dictbuf)
  
 const Player = require('./Player');
@@ -16,7 +15,6 @@ let player;
 term.clear() ;
 let history = [] ;
 let autoComplete = [] ;
-
 
 async function confirm(question = 'confirm your selection') {
 	term( '\nDo you %s? [Y|n]\n', question ) ;
@@ -78,7 +76,6 @@ function calculateScore(flourish, heart, language, penmanship, bonus = 0){
         score += (language ? 1 : -1)
     }
     return score;
-    
 }
  
 async function checkText(input){
@@ -92,7 +89,6 @@ async function checkText(input){
             suggestions.push({reason: `Word '${words[i]}' not recognized. Suggestions: ${suggest}`});
         }
     }
-        
     if(suggestions.length === 0){
         term.red('No Suggestions available.\n');
         } else {
@@ -115,9 +111,7 @@ async function paragraph(n, scene, selected){
         heart = await rollDice(player.heart, data.dice, 'heart', scene)
     }
     let language = await rollDice(player.language, data.dice, 'language', scene)
-    
     let type = language ? 'Superior' : 'Inferior';
-
     let words = data.scenarios[scene].InkPot.map(e => e[type]).filter(w => !selected.includes(w) )
     term( '\nSelect the Word from the Ink Pot: \n');
     let word = await term.singleColumnMenu( words ).promise;
@@ -125,13 +119,11 @@ async function paragraph(n, scene, selected){
     //autoComplete.push(word.selectedText.replace(/^\w/, function (chr) {
     //    return chr.toLowerCase();
     //}));
-
     var marked = data.scenarios[scene].InkPot.filter(obj => {
         return obj[type] === word.selectedText
     })
     selected.push(marked[0]['Superior']);
     selected.push(marked[0]['Inferior']);
-
     let augment = flourish && heart ? ' - Flourished' :'';
     let step = {selectedText:"Cancel"};
     let input = "";
@@ -155,7 +147,6 @@ async function paragraph(n, scene, selected){
         term('\n\nParagraph completed?');
         step = await term.singleColumnMenu( data.scene ).promise;
     }while(step.selectedText !== "Continue")
-
     term( '\n');
     let penmanship = await rollDice(player.penmanship, data.dice, 'penmanship', scene)
     let bonus = 0;
@@ -163,21 +154,16 @@ async function paragraph(n, scene, selected){
         let extraPenmanship = await rollDice(player.penmanship, data.dice, 'penmanship', scene)
         bonus += extraPenmanship ? 2 : -2;
     } 
-
     let score = calculateScore(flourish, heart, language, penmanship, bonus);
     term.red("Score:", score)
     player.total += score;
-
     return input;
 }
 
 function finalLetter(letter, scene){
-
-    term.clear() ;
     term.blue(`\nPlayer: ${player}`);
     term.blue('\nYour letter:\n\n');
     letter.forEach(p => term.green('%s\n\n',p));
-
     term.red('\nTotal score: %s\n', player.total);
     term.blue('Consequences\n')
     let key = "";
@@ -191,7 +177,6 @@ function finalLetter(letter, scene){
         key = "11+ points";
     }
     term.green('%s\n\n',data.scenarios[scene].Consequences[key])
-
     let date = new Date();
     let ts = [
         date.getFullYear(),
@@ -205,7 +190,6 @@ function finalLetter(letter, scene){
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir);
     }
-
     let filename =  `${dir}/${scene}_${player.character}_${ts}.md`
     fs.writeFile(filename.replace(/\s/g,''), [ 
         `# ${scene}`, 
@@ -244,14 +228,11 @@ async function session(){
     let skill = await selection('skill', data.skills, data.description);
     let scene = await scenario();
     player = new Player(character, skill, data, scene);
-
     term.blue(`\nPlayer created: ${player}\n`);
-
     let i;
     for (i = 0; i < letter.length; i++) {
        letter[i] = await paragraph(i+1, scene, usedWords);
     }
-
     finalLetter(letter, scene);
 }
 
@@ -270,11 +251,41 @@ async function main(){
     term.wrap.cyan('❖ Write your letter using one Ink Pot word per paragraph. \n');
     term.wrap.cyan('❖ Use a skill once per scenario.\n');
     term.wrap.cyan('❖ The letter ends after the fifth paragraph.\n\n');
-
     while(await confirm('want to play')){
         await session();
     }
     process.exit();
 }
-     
+
+const argv = yargs
+    .option('classic', {
+        alias: 'c',
+        description: 'Start a Classic game of Quill',
+        type: 'boolean',
+    })
+    .help()
+    .alias('help', 'h')
+    .argv;/*
+    .option('dwarves', { // to-do
+        alias: 'd',
+        description: 'Start a Coal & Parchmen game of Quill',
+        type: 'boolean',
+    })
+    .option('quest', { // to-do
+        alias: 'q',
+        description: 'Start a Quest game of Quill',
+        type: 'boolean',
+    })
+    .option('whitebox', { // to-do
+        alias: 'w',
+        description: 'Start a White-Box game of Quill',
+        type: 'boolean',
+    })*/
+
+//if (argv.classic) {
+//    main();
+//}
 main();
+
+
+
