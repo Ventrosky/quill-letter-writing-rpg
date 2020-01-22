@@ -6,8 +6,8 @@ const {Nodehun} = require('nodehun');
 const affbuf = fs.readFileSync('en_US.aff');
 const dictbuf = fs.readFileSync('en_US.dic');
 const nodehun = new Nodehun(affbuf, dictbuf)
- 
 const Player = require('./Player');
+const {calculateScore, test, matrixConcat, rerollMax, rollD6, totalToKey} = require('./utils');
 
 let rawdata = fs.readFileSync('data.json');
 let data = JSON.parse(rawdata);
@@ -33,36 +33,37 @@ async function selection(what, items, desc){
     return answer.selectedText;
 }
 
-function matrixConcat(a, b){
-    return a.map(function(n, i){
-        return n.concat(b[i]);
-    });
+function printDice(die){
+    die.forEach(r => term.yellow('%s\n',r));
 }
 
-const test = (n) => n >= 5;
+function printAllDice(results){
+    let matrixAscii = results.map(x =>  data.dice[x]).reduce(matrixConcat, data.dice[0]);
+    printDice(matrixAscii);
+}
 
-async function rollDice(n, ascii, name, scene){
-    let reroll = testReroll(scene, name);
-    term('\n');
-    term.yellow('Test %s\n',name.replace(/^./, name[0].toUpperCase()));
-    let results = Array.apply(null, Array(n)).map( _ =>  Math.floor(Math.random() * 6)+1);
-    if (reroll){
-        let i = results.indexOf(Math.max(...results));
-        results[i] = Math.floor(Math.random() * 6)+1;
+function testReroll(scene,test){
+    return data.scenarios[scene].reroll.includes(test);
+}
+
+async function rollDice(n, name, scene){
+    term.yellow('\nTest %s\n',name.replace(/^./, name[0].toUpperCase()));
+    let results = Array.apply(null, Array(n)).map( _ =>  rollD6());
+    if (testReroll(scene, name)){
+        results = rerollMax(results)
     }
-    let matrixAscii = results.map(x =>  ascii[x]).reduce(matrixConcat, ascii[0]);
-    matrixAscii.forEach(r => term.yellow('%s\n',r));
+    printAllDice(results);
     max = Math.max(...results);
     esito = test(max);
     term.yellow('Result: %s %s\n',max, esito ? 'success' : 'failure')
     if(!esito && player.target === name && !player.usedSkill){
         let skill = await confirm(`whish to Use ${player.skill}`);
         if (skill){
-            let extra = Math.floor(Math.random() * 6)+1
+            let extra = rollD6();
             results.push(extra);
             max = Math.max(...results);
             esito = test(max);
-            ascii[extra].forEach(r => term.yellow('%s\n',r));
+            printDice(data.dice[extra]);
             player.usedSkill = true;
             term.yellow('\nResult: %s %s\n',max, esito ? 'success' : 'failure')
         }
@@ -70,14 +71,6 @@ async function rollDice(n, ascii, name, scene){
     return esito;
 }
 
-function calculateScore(flourish, heart, language, penmanship, bonus = 0){
-    let score = (language ? 1 : 0) + (penmanship ? 1 : 0) + bonus;
-    if (flourish && heart){
-        score += (language ? 1 : -1)
-    }
-    return score;
-}
- 
 async function checkText(input){
     let suggestions = writeGood(input, data.writeGood) || [];
     term('\n');
@@ -96,10 +89,6 @@ async function checkText(input){
     }
 }
 
-function testReroll(scene,test){
-    return data.scenarios[scene].reroll.includes(test);
-}
-
 async function paragraph(n, scene, selected){
     if(await confirm('want to clear the screen')){
         term.clear();
@@ -108,9 +97,9 @@ async function paragraph(n, scene, selected){
     let flourish = await confirm('whish to Use Flourishes');
     let heart = false;
     if (flourish){
-        heart = await rollDice(player.heart, data.dice, 'heart', scene)
+        heart = await rollDice(player.heart, 'heart', scene)
     }
-    let language = await rollDice(player.language, data.dice, 'language', scene)
+    let language = await rollDice(player.language, 'language', scene)
     let type = language ? 'Superior' : 'Inferior';
     let words = data.scenarios[scene].InkPot.map(e => e[type]).filter(w => !selected.includes(w) )
     term( '\nSelect the Word from the Ink Pot: \n');
@@ -147,11 +136,11 @@ async function paragraph(n, scene, selected){
         term('\n\nParagraph completed?');
         step = await term.singleColumnMenu( data.scene ).promise;
     }while(step.selectedText !== "Continue")
-    term( '\n');
-    let penmanship = await rollDice(player.penmanship, data.dice, 'penmanship', scene)
+    term('\n');
+    let penmanship = await rollDice(player.penmanship, 'penmanship', scene)
     let bonus = 0;
     if(data.scenarios[scene].hasOwnProperty('code') && data.scenarios[scene].code){
-        let extraPenmanship = await rollDice(player.penmanship, data.dice, 'penmanship', scene)
+        let extraPenmanship = await rollDice(player.penmanship, 'penmanship', scene)
         bonus += extraPenmanship ? 2 : -2;
     } 
     let score = calculateScore(flourish, heart, language, penmanship, bonus);
@@ -166,16 +155,7 @@ function finalLetter(letter, scene){
     letter.forEach(p => term.green('%s\n\n',p));
     term.red('\nTotal score: %s\n', player.total);
     term.blue('Consequences\n')
-    let key = "";
-    if(player.total < 5){
-        key = "Less than 5 points";
-    }else if(player.total >= 5 && player.total <= 7){
-        key = "5 to 7 points";
-    }else if(player.total >= 8 && player.total <= 10){
-        key = "8 to 10 points";
-    }else{
-        key = "11+ points";
-    }
+    let key = totalToKey(player.total);
     term.green('%s\n\n',data.scenarios[scene].Consequences[key])
     let date = new Date();
     let ts = [
