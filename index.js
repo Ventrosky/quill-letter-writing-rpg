@@ -267,4 +267,16 @@ const argv = yargs
 //    main();
 //}
 
+function terminate() {
+    term.clear();
+    term.grabInput( false ) ;
+	setTimeout( function() { process.exit() } , 100 ) ;
+}
+
+term.on( 'key' , function( name , matches , data ) {
+	if ( name === 'CTRL_C' ) { 
+        terminate() ; 
+    }
+} ) ;
+
 main();
