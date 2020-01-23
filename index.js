@@ -7,7 +7,7 @@ const affbuf = fs.readFileSync('en_US.aff');
 const dictbuf = fs.readFileSync('en_US.dic');
 const nodehun = new Nodehun(affbuf, dictbuf)
 const Player = require('./Player');
-const {calculateScore, test, matrixConcat, rerollMax, rollD6, totalToKey} = require('./utils');
+const {calculateScore, test, matrixConcat, rerollMax, rollD6, getKeyTotal} = require('./utils');
 
 let rawdata = fs.readFileSync('data.json');
 let data = JSON.parse(rawdata);
@@ -140,6 +140,7 @@ async function paragraph(n, scene, selected){
     let penmanship = await rollDice(player.penmanship, 'penmanship', scene)
     let bonus = 0;
     if(data.scenarios[scene].hasOwnProperty('code') && data.scenarios[scene].code){
+        term.yellow('Extra Test Scenario\n');
         let extraPenmanship = await rollDice(player.penmanship, 'penmanship', scene)
         bonus += extraPenmanship ? 2 : -2;
     } 
@@ -155,7 +156,7 @@ function finalLetter(letter, scene){
     letter.forEach(p => term.green('%s\n\n',p));
     term.red('\nTotal score: %s\n', player.total);
     term.blue('Consequences\n')
-    let key = totalToKey(player.total);
+    let key = getKeyTotal(data.scenarios[scene].Consequences, player.total);
     term.green('%s\n\n',data.scenarios[scene].Consequences[key])
     let date = new Date();
     let ts = [
@@ -265,7 +266,5 @@ const argv = yargs
 //if (argv.classic) {
 //    main();
 //}
+
 main();
-
-
-

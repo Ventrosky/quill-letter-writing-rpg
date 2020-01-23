@@ -15,29 +15,45 @@ function matrixConcat(a, b){
     });
 }
 
-function rerollMax(results){
-    let i = results.indexOf(Math.max(...results));
-    results[i] = Math.floor(Math.random() * 6)+1;
-    return results;
+function randomRange(min, max){
+    return  Math.floor(Math.random() * (max - min) + min);
 }
 
 function rollD6(){
-    return Math.floor(Math.random() * 6)+1;
+    return randomRange(1,6);
 }
 
-function totalToKey(total){
-    let key = "";
-    if(total < 5){
-        key = "Less than 5 points";
-    }else if(total >= 5 && total <= 7){
-        key = "5 to 7 points";
-    }else if(total >= 8 && total <= 10){
-        key = "8 to 10 points";
-    }else{
-        key = "11+ points";
-    }
-    return key;
+function rerollMax(results){
+    let i = results.indexOf(Math.max(...results));
+    results[i] = rollD6();
+    return results;
 }
+
+function getKeyTotal(object, roll){
+    let keys = Object.keys(object);
+    let i = 0;
+    for (i = 0; i < keys.length; i++) {
+        if (keys[i] == "Dice") continue;
+        let key = keys[i];
+        let delims = key.split("-");
+        if(delims.length == 2){
+            if(delims[0] == ""){ 
+                if(roll <= delims[1]) return key;
+            }
+            else{ 
+                if(roll >= delims[0] && roll <= delims[1]) return key;
+            }
+        }
+        else if(delims.length == 1){
+            if(delims[0].includes("+")){
+                if (roll >= parseInt(delims[0].replace("+",""))) return key;
+            }
+            else if(roll == parseInt(delims[0]))  return key; 
+        }
+    }
+    return "";
+}
+
 
 
 module.exports = { 
@@ -45,6 +61,7 @@ module.exports = {
     test,
     matrixConcat,
     rerollMax,
+    randomRange,
     rollD6,
-    totalToKey
+    getKeyTotal
  };

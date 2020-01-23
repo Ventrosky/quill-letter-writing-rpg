@@ -171,10 +171,10 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": "The Archduke is disgusted by your letter. You have lost his respect and will no longer be in contact with you.",
-                "5 to 7 points": "The Archduke responds kindly, but is quick to criticise your letter. You will unlikely hear from him for some months.",
-                "8 to 10 points": "The Archduke thanks you for your kind letter. He invites you over next week to stay on his estate.",
-                "11+ points": "The Archduke thanks you profusely for your excellent letter and promises that you will be repaid for your kindness with a gift of great worth."
+                "-4": "The Archduke is disgusted by your letter. You have lost his respect and will no longer be in contact with you.",
+                "5-7": "The Archduke responds kindly, but is quick to criticise your letter. You will unlikely hear from him for some months.",
+                "8-10": "The Archduke thanks you for your kind letter. He invites you over next week to stay on his estate.",
+                "11+": "The Archduke thanks you profusely for your excellent letter and promises that you will be repaid for your kindness with a gift of great worth."
             },
             "bonus": {
                 "All":"penmanship",
@@ -239,10 +239,10 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": "Christina takes great offence to your letter and responds with a scathing letter about your character. She will not sell you the painting...ever.",
-                "5 to 7 points": "Christina's response is mild, but she has obviously taken some offence. She will sell the painting but for double the price.",
-                "8 to 10 points": "Christina is pleased with your letter and responds enthusiastically. She clearly has taken little offence and will sell you the painting.",
-                "11+ points": "Christina is overwhelmed by your letter and wishes to give you the painting as a gift."
+                "-4": "Christina takes great offence to your letter and responds with a scathing letter about your character. She will not sell you the painting...ever.",
+                "5-7": "Christina's response is mild, but she has obviously taken some offence. She will sell the painting but for double the price.",
+                "8-10": "Christina is pleased with your letter and responds enthusiastically. She clearly has taken little offence and will sell you the painting.",
+                "11+": "Christina is overwhelmed by your letter and wishes to give you the painting as a gift."
             },
             "bonus": {
             },
@@ -300,10 +300,10 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": "Anthony responds aggressively, blaming you for not being there for him and for not caring. You no longer hear from Anthony.",
-                "5 to 7 points": "Anthony's is clearly disappointed in how you have relayed the information to him, but he does not blame you.",
-                "8 to 10 points": "Anthony thanks you for telling him about his son and invites you to his funeral.",
-                "11+ points": "Anthony commends you for your letter and wishes you to speak at his son's funeral."
+                "-4": "Anthony responds aggressively, blaming you for not being there for him and for not caring. You no longer hear from Anthony.",
+                "5-7": "Anthony's is clearly disappointed in how you have relayed the information to him, but he does not blame you.",
+                "8-10": "Anthony thanks you for telling him about his son and invites you to his funeral.",
+                "11+": "Anthony commends you for your letter and wishes you to speak at his son's funeral."
             },
             "bonus": {
                 "The Monk" : "language"
@@ -363,10 +363,10 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": "The King does not respond. Several days after you sent your missive you are visited by the royal guard and brought to prison for your disrespectful letter.",
-                "5 to 7 points": "You receive a letter from the captain of the royal guard thanking you, but she does not believe you and does not wish you to write again.",
-                "8 to 10 points": "You receive a letter from a senior official close to the King thanking you. You also receive a monetary reward in the letter.",
-                "11+ points": "The King writes to you personally with great thanks. He has positioned his guard close by and the spy will be caught. You are invited to the King's court as a guest and hero."
+                "-4": "The King does not respond. Several days after you sent your missive you are visited by the royal guard and brought to prison for your disrespectful letter.",
+                "5-7": "You receive a letter from the captain of the royal guard thanking you, but she does not believe you and does not wish you to write again.",
+                "8-10": "You receive a letter from a senior official close to the King thanking you. You also receive a monetary reward in the letter.",
+                "11+": "The King writes to you personally with great thanks. He has positioned his guard close by and the spy will be caught. You are invited to the King's court as a guest and hero."
             },
             "bonus": {
                 "All":"penmanship",
@@ -426,10 +426,10 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": "You receive a response to your letter, explaining that Aubrey could never be with you. Your true love tells you to never write again.",
-                "5 to 7 points": "Aubrey is flattered, but cannot return your love. You receive no more letters.",
-                "8 to 10 points": "You receive a beautiful letter returning your feelings. Aubrey will be moving in the next month to be with you.",
-                "11+ points": "Aubrey is overjoyed with your letter and will not only move within the fortnight, but also wishes to marry you immediately."
+                "-4": "You receive a response to your letter, explaining that Aubrey could never be with you. Your true love tells you to never write again.",
+                "5-7": "Aubrey is flattered, but cannot return your love. You receive no more letters.",
+                "8-10": "You receive a beautiful letter returning your feelings. Aubrey will be moving in the next month to be with you.",
+                "11+": "Aubrey is overjoyed with your letter and will not only move within the fortnight, but also wishes to marry you immediately."
             },
             "bonus": {
                 "All":"penmanship"
@@ -488,10 +488,10 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": "Emery write back, believing that you are worse than ever and that there is no hint of sincerity in your writing. You receive no further correspondence.",
-                "5 to 7 points": "Emery's heart is softened by your words, but cannot be with you. Emery is happy to be friends with you.",
-                "8 to 10 points": "You receive a heartfelt letter from Emery, admitting that you have changed and that you both should meet by the fountain on Monday evening to rekindle your love.",
-                "11+ points": "You receive no correspondence. Instead, a few days after sending, you receive a knock at your door. Emery stands there and you both embrace. You marry within the month."
+                "-4": "Emery write back, believing that you are worse than ever and that there is no hint of sincerity in your writing. You receive no further correspondence.",
+                "5-7": "Emery's heart is softened by your words, but cannot be with you. Emery is happy to be friends with you.",
+                "8-10": "You receive a heartfelt letter from Emery, admitting that you have changed and that you both should meet by the fountain on Monday evening to rekindle your love.",
+                "11+": "You receive no correspondence. Instead, a few days after sending, you receive a knock at your door. Emery stands there and you both embrace. You marry within the month."
             },
             "bonus": {
             },
@@ -550,10 +550,10 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": "You are visited by Francis' personal aid who tells you to stop your harassing correspondence or there will be trouble.",
-                "5 to 7 points": "Your receive a reply, but it is not good news. Your letter was one of the best Francis has read this month, but the feelings are not reciprocated.",
-                "8 to 10 points": "Francis writes back, impressed by your letter. Very few people are able to pull off such wonderful language, and Francis wishes to meet with you this week.",
-                "11+ points": "A personal aid of Francis appears at your door. He says that Francis was overwhelmed by your letter and believe you to be soulmates."
+                "-4": "You are visited by Francis' personal aid who tells you to stop your harassing correspondence or there will be trouble.",
+                "5-7": "Your receive a reply, but it is not good news. Your letter was one of the best Francis has read this month, but the feelings are not reciprocated.",
+                "8-10": "Francis writes back, impressed by your letter. Very few people are able to pull off such wonderful language, and Francis wishes to meet with you this week.",
+                "11+": "A personal aid of Francis appears at your door. He says that Francis was overwhelmed by your letter and believe you to be soulmates."
             },
             "bonus": {
                 "The Aristocrat":"heart"
@@ -612,10 +612,10 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": "You receive a letter saying that Rowan is leaving the country, although it doesn't mention a reason. You receive no further correspondence.",
-                "5 to 7 points": "Your receive a reply, but Rowan just wants to remain friends. You soon grow apart, but see each other on occasion, although it is awkward.",
-                "8 to 10 points": "Rowan writes a relieved letter explaining that the feelings are mutual.",
-                "11+ points": "Rowan is ecstatic and immediately begins planning a wedding."
+                "-4": "You receive a letter saying that Rowan is leaving the country, although it doesn't mention a reason. You receive no further correspondence.",
+                "5-7": "Your receive a reply, but Rowan just wants to remain friends. You soon grow apart, but see each other on occasion, although it is awkward.",
+                "8-10": "Rowan writes a relieved letter explaining that the feelings are mutual.",
+                "11+": "Rowan is ecstatic and immediately begins planning a wedding."
             },
             "bonus": {
                 "All":"language"
@@ -674,10 +674,10 @@
                 }
             ],
             "Consequences":{
-                "Less than 5 points": "You receive an angry letter from Lady Bethany telling you to refrain from any more correspondence. She has placed more guards outside her estate and has ordered them to shoot on site if they see you.",
-                "5 to 7 points": "Florence responds, but is confused about your letter, so does not acknowledge your proposal.",
-                "8 to 10 points": "Florence agrees to marry you and is impressed with your clever letter.",
-                "11+ points": "Florence will marry you, and after showing the exceptional way you proposed..."
+                "-4": "You receive an angry letter from Lady Bethany telling you to refrain from any more correspondence. She has placed more guards outside her estate and has ordered them to shoot on site if they see you.",
+                "5-7": "Florence responds, but is confused about your letter, so does not acknowledge your proposal.",
+                "8-10": "Florence agrees to marry you and is impressed with your clever letter.",
+                "11+": "Florence will marry you, and after showing the exceptional way you proposed..."
             },
             "bonus": {
             },
