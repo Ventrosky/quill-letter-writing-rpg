@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "nodehun": "^3.0.1",
-    "terminal-kit": "^1.32.3",
+    "terminal-kit": "^3.0.0",
     "write-good": "^1.0.2",
     "yargs": "^15.1.0"
   },
